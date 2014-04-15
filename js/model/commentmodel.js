@@ -7,6 +7,8 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global CommentModel */
+define(['jquery', 'backbone'], function($, Backbone){
+
 var CommentModel = Backbone.Model.extend(
 /** @lends CommentModel.prototype */
 	{
@@ -20,3 +22,8 @@ var CommentModel = Backbone.Model.extend(
 		}
 	}
 );
+
+	return {
+		'CommentModel': CommentModel
+	};
+});

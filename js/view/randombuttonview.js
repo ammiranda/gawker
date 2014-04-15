@@ -6,6 +6,9 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global CommentModel, FormView */
+
+define(['jquery', 'backbone', 'commentmodel', 'formview'], function($, Backbone, CommentModel, FormView){
+
 var RandomButtonView = Backbone.View.extend(
 /** @lends RandomButtonView.prototype */
 	{
@@ -44,3 +47,8 @@ var RandomButtonView = Backbone.View.extend(
 		}
 	}
 );
+
+	return {
+		'RandomButtonView': RandomButtonView
+	};
+});

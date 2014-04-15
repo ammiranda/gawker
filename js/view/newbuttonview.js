@@ -6,6 +6,9 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global CommentModel, FormView */
+
+define(['jquery', 'backbone', 'commentmodel', 'formview'], function($, Backbone, CommentModel, FormView){
+
 var NewButtonView = Backbone.View.extend(
 /** @lends NewButtonView.prototype */
 	{
@@ -56,3 +59,8 @@ var NewButtonView = Backbone.View.extend(
 	
 	}
 );
+
+	return {
+		'NewButtonView': NewButtonView
+	};
+});

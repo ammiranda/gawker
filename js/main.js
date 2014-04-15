@@ -1,7 +1,7 @@
 requirejs.config({
 	'baseUrl': '/backbone-demo-master',
 	'paths': {
-		'app': '',
+		'app': 'js',
 		// define libs paths
 		'jquery': 'lib/jquery',
 		'underscore': 'lib/underscore',
@@ -12,6 +12,9 @@ requirejs.config({
 
 	// Shim declaration
 	'shim': {
+		'jquery': {
+			'exports': '$'
+		},
 		'underscore': {
 			'exports': '_'
 		},
@@ -23,4 +26,9 @@ requirejs.config({
 			'exports': 'Mustache'
 		}
 	}
+});
+
+require(['js/app/app'], function(App){
+	var app = new App();
+	app.initialize();
 });

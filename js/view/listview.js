@@ -7,6 +7,9 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global CommentView */
+
+define(['jquery', 'backbone', 'commentview'], function($, Backbone, CommentView){
+
 var CommentlistView = Backbone.View.extend(
 /** @lends CommentlistView.prototype */
 	{
@@ -40,3 +43,8 @@ var CommentlistView = Backbone.View.extend(
 		}
 	}
 );
+
+	return {
+		'ListView': ListView
+	}
+});

@@ -9,6 +9,9 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global Mustache, FormView */
+
+define(['jquery', 'backbone', 'mustache', 'formview'], function($, Backbone, Mustache, FormView){
+
 var CommentView = Backbone.View.extend(
 /** @lends CommentView.prototype */
 	{
@@ -131,3 +134,8 @@ var CommentView = Backbone.View.extend(
 		}
 	}
 );
+
+	return {
+		'CommentView': CommentView
+	};
+});

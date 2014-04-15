@@ -11,6 +11,9 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global CommentCollection, CommentlistView, FormView, NewButtonView, RandomButtonView */
+
+define(['jquery', 'backbone', 'commentcollection', 'commentlistview', 'formview', 'newbuttonview', 'randombuttonview'], function($, Backbone, CommentCollection, CommentListView, FormView, NewButtonView, RandomButtonView){
+
 var App = Backbone.View.extend(
 /** @lends App.prototype */
 	{
@@ -34,6 +37,11 @@ var App = Backbone.View.extend(
 		}
 	}
 );
+
+	return {
+		'App': App
+	};
+});
 
 
 /**
