@@ -1,0 +1,25 @@
+{
+  "name": "backbone-demo-master",
+  "version": "0.0.0",
+  "description": "Backbone-demo ============= Backbone-demo is a simple JS application to show you the basics of Backbone models, collections and views.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amiranda222/gawker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amiranda222/gawker/issues"
+  },
+  "homepage": "https://github.com/amiranda222/gawker",
+  "devDependencies": {
+    "grunt": "^0.4.4"
+  }
+}
