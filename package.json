@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/amiranda222/gawker",
   "devDependencies": {
-    "grunt": "^0.4.4"
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0"
   }
 }
