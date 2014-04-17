@@ -1,7 +1,7 @@
 requirejs.config({
-	'baseUrl': '/backbone-demo-master',
+	'baseUrl': './',
 	'paths': {
-		'app': 'js',
+		'app': 'js/app/app',
 		// define libs paths
 		'jquery': 'lib/jquery',
 		'underscore': 'lib/underscore',
@@ -28,7 +28,7 @@ requirejs.config({
 	}
 });
 
-require(['js/app/app'], function(App){
+require(['app'], function(App){
 	var app = new App();
 	app.initialize();
 });
