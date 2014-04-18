@@ -20,7 +20,5 @@ var CommentCollection = Backbone.Collection.extend(
 	}
 );
 
-	return {
-		'commentcollection': CommentCollection
-	};
+	return CommentCollection;
 });

@@ -12,7 +12,7 @@
  */
 /*global CommentCollection, CommentlistView, FormView, NewButtonView, RandomButtonView */
 
-define(['jquery', 'backbone', 'commentcollection', 'commentlistview', 'formview', 'newbuttonview', 'randombuttonview'], function($, Backbone, CommentCollection, CommentListView, FormView, NewButtonView, RandomButtonView){
+define(['jquery', 'backbone', 'commentcollection', 'listview', 'formview', 'newbuttonview', 'randombuttonview'], function($, Backbone, CommentCollection, CommentlistView, FormView, NewButtonView, RandomButtonView){
 
 var App = Backbone.View.extend(
 /** @lends App.prototype */

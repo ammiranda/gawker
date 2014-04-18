@@ -44,7 +44,6 @@ var CommentlistView = Backbone.View.extend(
 	}
 );
 
-	return {
-		'ListView': ListView
-	};
+	return CommentlistView;
+	
 });

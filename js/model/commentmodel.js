@@ -23,7 +23,5 @@ var CommentModel = Backbone.Model.extend(
 	}
 );
 
-	return {
-		'commentmodel': CommentModel
-	};
+	return CommentModel;
 });

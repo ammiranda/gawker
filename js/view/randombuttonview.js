@@ -48,7 +48,6 @@ var RandomButtonView = Backbone.View.extend(
 	}
 );
 
-	return {
-		'RandomButtonView': RandomButtonView
-	};
+	return RandomButtonView;
+	
 });

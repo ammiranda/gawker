@@ -120,7 +120,6 @@ var FormView = Backbone.View.extend(
 	}
 );
 
-	return {
-		'FormView': FormView
-	};
+	return FormView;
+	
 });

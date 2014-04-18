@@ -60,7 +60,6 @@ var NewButtonView = Backbone.View.extend(
 	}
 );
 
-	return {
-		'NewButtonView': NewButtonView
-	};
+	return NewButtonView;
+	
 });

@@ -135,7 +135,6 @@ var CommentView = Backbone.View.extend(
 	}
 );
 
-	return {
-		'CommentView': CommentView
-	};
+	return CommentView;
+	
 });
