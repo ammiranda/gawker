@@ -1,7 +1,14 @@
 requirejs.config({
-	'baseUrl': './',
+	'baseUrl': '',
 	'paths': {
 		'app': 'js/app/app',
+		'commentcollection': 'js/model/commentcollection',
+		'commentmodel': 'js/model/commentmodel',
+		'commentview': 'js/view/commentview',
+		'formview': 'js/view/formview',
+		'listview': 'js/view/listview',
+		'newbuttonview': 'js/view/newbuttonview',
+		'randombuttonview': 'js/view/randombuttonview',
 		// define libs paths
 		'jquery': 'lib/jquery',
 		'underscore': 'lib/underscore',
