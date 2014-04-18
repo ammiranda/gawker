@@ -38,9 +38,7 @@ var App = Backbone.View.extend(
 	}
 );
 
-	return {
-		'App': App
-	};
+	return App;
 });
 
 

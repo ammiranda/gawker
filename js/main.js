@@ -36,6 +36,6 @@ requirejs.config({
 });
 
 require(['app'], function(App){
-	var app = new App.App();
+	var app = new App({el: $('#application')});
 	app.initialize();
 });
