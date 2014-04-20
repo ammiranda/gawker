@@ -90,7 +90,14 @@ var FormView = Backbone.View.extend(
 		*/
 		cancel: function () {
 			// clean up form
-			this.remove();
+			if (this.model.get('text') !== this.$el.find('.text').val()){
+				if(confirm("Discard current changes?")) {
+					this.remove();
+				}
+			}
+			else {
+				this.remove();
+			}
 			return false;
 		},
 		
