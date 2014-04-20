@@ -64,22 +64,31 @@ var FormView = Backbone.View.extend(
 		 */
 		submit: function () {
 			// set values from form on model
-			this.model.set({
-				author: this.$el.find('.author').val(),
-				text: this.$el.find('.text').val()
-			});
-			
-			// set an id if model was a new instance
-			// note: this is usually done automatically when items are stored in an API
-			if (this.model.isNew()) {
-				this.model.id = Math.floor(Math.random() * 1000);
+
+			if ($.trim(this.$el.find('.author').val()) === "") {
+				alert("You must write your name in the author field!");
 			}
-			
-			// trigger the 'success' event on form, with the returned model as the only parameter
-			this.trigger('success', this.model);
-			
-			// remove form view from DOM and memory
-			this.remove();
+			else if ($.trim(this.$el.find('.text').val()) === "") {
+				alert("You cannot leave your comment blank!");
+			}
+			else {
+				this.model.set({
+					author: this.$el.find('.author').val(),
+					text: this.$el.find('.text').val()
+				});
+				
+				// set an id if model was a new instance
+				// note: this is usually done automatically when items are stored in an API
+				if (this.model.isNew()) {
+					this.model.id = Math.floor(Math.random() * 1000);
+				}
+				
+				// trigger the 'success' event on form, with the returned model as the only parameter
+				this.trigger('success', this.model);
+				
+				// remove form view from DOM and memory
+				this.remove();
+			}
 			return false;
 		},
 		
@@ -90,7 +99,7 @@ var FormView = Backbone.View.extend(
 		*/
 		cancel: function () {
 			// clean up form
-			if (this.model.get('text') !== this.$el.find('.text').val()){
+			if (this.model.get('text') !== this.$el.find('.text').val() || this.model.get('author') !== this.$el.find('.author').val()){
 				if(confirm("Discard current changes?")) {
 					this.remove();
 				}

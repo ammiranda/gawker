@@ -72,6 +72,9 @@ var CommentView = Backbone.View.extend(
 		 */
 		edit: function () {
 			// create new FormView instance to edit the comment
+			if ($('.commentform').length > 0) {
+				formview.cancel();
+			}
 			var formview = new FormView({model: this.model});
 			
 			// insert FormView instance after the comment container
