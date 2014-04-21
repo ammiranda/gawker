@@ -9,5 +9,9 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('test', ['jshint']);
+	grunt.registerTask('production', ['requirejs']);
+	grunt.registerTask('clean', function() {
+		grunt.file.delete()
+	})
 };
