@@ -7,7 +7,7 @@
  * @author Bodnar Istvan <istvan@gawker.com>
  */
 /*global CommentModel */
-define(['jquery', 'backbone', 'commentmodel'], function($, Backbone, CommentModel){
+define(['jquery', 'backbone','underscore', 'commentmodel'], function($, Backbone, _, CommentModel){
 
 var CommentCollection = Backbone.Collection.extend(
 /** @lends CommentCollection.prototype */
@@ -16,7 +16,13 @@ var CommentCollection = Backbone.Collection.extend(
 		 * Sets the allowed type of contained models
 		 * @type Backbone.Model
 		 */
-		model: CommentModel
+		model: CommentModel,
+		initialize: function () {
+			this.on('edit:clicked', this.enforceOnlyOneIsEdited)
+		},
+		enforceOnlyOneIsEdited: function(this.model) {
+			{_.each(_.without(this.where({beingEdited:true}), this.model), function(model) { model.set('beingEdited', false) }); }
+		}
 	}
 );
 

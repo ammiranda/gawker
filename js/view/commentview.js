@@ -72,14 +72,12 @@ var CommentView = Backbone.View.extend(
 		 */
 		edit: function () {
 			// create new FormView instance to edit the comment
-			if ($('.commentform').length > 0) {
-				formview.cancel();
-			}
+			this.model.trigger('edit:clicked');
+			this.model.set('beingEdited', true);
 			var formview = new FormView({model: this.model});
 			
 			// insert FormView instance after the comment container
 			this.$el.after(formview.render().$el);
-			
 			// listen to save success event to handle successful form submit event
 			formview.on('success', this.handleEditSuccess, this);
 			return false;

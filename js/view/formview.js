@@ -41,6 +41,7 @@ var FormView = Backbone.View.extend(
 		initialize: function () {
 			this.model.on('change', this.updateFields, this);
 			this.model.on('destroy', this.remove, this);
+			this.listenTo(this.model, 'change:beingEdited', this.cancel);
 		},
 		
 		/**
@@ -107,6 +108,7 @@ var FormView = Backbone.View.extend(
 			else {
 				this.remove();
 			}
+			this.model.off('change:beingEdited');
 			return false;
 		},
 		
