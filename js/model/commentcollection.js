@@ -20,11 +20,15 @@ var CommentCollection = Backbone.Collection.extend(
 		initialize: function () {
 			this.on('edit:clicked', this.enforceOnlyOneIsEdited)
 		},
-		enforceOnlyOneIsEdited: function(this.model) {
-			{_.each(_.without(this.where({beingEdited:true}), this.model), function(model) { model.set('beingEdited', false) }); }
+		enforceOnlyOneIsEdited: function(modelBeingEdited) {
+ 			_.each(
+ 				_.without(this.where({beingEdited:true}), modelBeingEdited)
+   				, function(model) {
+     				model.set('beingEdited', false)
+   				  }
+ 			);
 		}
-	}
-);
+	});
 
 	return CommentCollection;
 });

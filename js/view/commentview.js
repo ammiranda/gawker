@@ -45,6 +45,7 @@ var CommentView = Backbone.View.extend(
 		initialize: function () {
 			this.model.on('change', this.render, this);
 			this.model.on('destroy', this.remove, this);
+			this.model.on('edit', this.cancel, this)
 		},
 		
 		/**
@@ -72,7 +73,7 @@ var CommentView = Backbone.View.extend(
 		 */
 		edit: function () {
 			// create new FormView instance to edit the comment
-			this.model.trigger('edit:clicked');
+			this.model.trigger('edit:clicked', this.model);
 			this.model.set('beingEdited', true);
 			var formview = new FormView({model: this.model});
 			

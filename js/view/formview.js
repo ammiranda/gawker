@@ -41,7 +41,7 @@ var FormView = Backbone.View.extend(
 		initialize: function () {
 			this.model.on('change', this.updateFields, this);
 			this.model.on('destroy', this.remove, this);
-			this.listenTo(this.model, 'change:beingEdited', this.cancel);
+			this.model.on('event', this.cancel, this);
 		},
 		
 		/**
@@ -67,10 +67,10 @@ var FormView = Backbone.View.extend(
 			// set values from form on model
 
 			if ($.trim(this.$el.find('.author').val()) === "") {
-				alert("You must write your name in the author field!");
+				alert("You cannot leave the author field blank!");
 			}
 			else if ($.trim(this.$el.find('.text').val()) === "") {
-				alert("You cannot leave your comment blank!");
+				alert("You cannot leave the comment field blank!");
 			}
 			else {
 				this.model.set({

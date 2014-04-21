@@ -28,6 +28,7 @@ var CommentlistView = Backbone.View.extend(
 			// first clean up the container
 			this.$el.empty();
 			
+
 			// iterate over models in collection and render comments using the CommentView view class
 			this.collection.each(function (item) {
 				// create new CommentView instance
